@@ -20,12 +20,12 @@ describe('Book', () => {
   test('POST --> returns newly created book', async () => {
     const response = await request(app).post('/book').send({
       name: 'book-1',
-      auhtor: 'sumit'
+      author: 'sumit'
     }).expect('Content-Type', /json/).expect(201);
 
     expect(response.body).toEqual(
       expect.objectContaining({
-        book: expect.any(Object)
+        book: expect.any(String)
       })
     )
   })
