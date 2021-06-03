@@ -12,7 +12,7 @@ app.post('/book', async (req, res, next) => {
   });
   res.status(201).json({
     book 
-  })
-})
+  });
+});
 
 module.exports = app;
