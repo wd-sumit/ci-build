@@ -25,7 +25,12 @@ describe('Book', () => {
 
     expect(response.body).toEqual(
       expect.objectContaining({
-        book: expect.any(String)
+        book: expect.objectContaining({
+          _id: expect.any(String),
+          name: expect.any(String),
+          author: expect.any(String),
+          __v: expect.any(Number)
+        })
       })
     )
   })
