@@ -1,0 +1,22 @@
+name: Node contineous integration
+
+on: 
+  pull_request:
+    branches: [develop]
+
+jobs: 
+  test_pull_request:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mongodb-version: [4.0, 4.2]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - uses: supercharge/mongodb-github-action@1.2.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+      - run: npm ci
+      - run: npm test
