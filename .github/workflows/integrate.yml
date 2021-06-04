@@ -1,9 +1,6 @@
 name: Node contineous integration
 
-on: 
-  pull_request:
-    branches: [master, develop]
-    [push]
+on: [push]
 
 jobs: 
   test_pull_request:
