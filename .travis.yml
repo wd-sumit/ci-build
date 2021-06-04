@@ -1,6 +1,10 @@
 language: node_js
 node_js: 
   - "12"
+
+notifications: 
+  email: wdsumit.pal@gmail.com
+  
 dist: trusty
 services: 
   - mongodb
